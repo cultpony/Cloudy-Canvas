@@ -30,7 +30,7 @@ Pushing a tag like `v1.2.3` on `mane` runs `.github/workflows/release.yml`, whic
 
 A cluster running [Flux](https://fluxcd.io/) can follow new releases with an `OCIRepository` that watches `oci://ghcr.io/<owner>/cloudy-canvas-manifests` with a semver range, plus a `Kustomization` that applies it. The manifests artifact is only pushed after the image, so a cluster never sees a release whose image is missing.
 
-Both packages must be public on GitHub (package settings, "Change visibility") so clusters can pull them without credentials.
+Both packages should be public so clusters can pull them without credentials. Packages of a public repository usually are; check under the package settings ("Change visibility") after the first release.
 
 ## Trying it locally
 
